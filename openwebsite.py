@@ -1,11 +1,12 @@
 from selenium import webdriver
 import time
 import opensite.getdatafromxml
+import unittest
 
 
-class OpenWebsite():
+class TestOpenWebsite(unittest.TestCase):
 
-    def a_test(self):
+    def test_a(self):
         driver = webdriver.Firefox()
         driver.maximize_window()
         driver.get("https://courses.letskodeit.com/practice")
@@ -19,10 +20,24 @@ class OpenWebsite():
         link.click()
         time.sleep(5)
         login_id = driver.find_element_by_xpath("//*[@id='email']")
-        login_id.send_keys(opensite.getdatafromxml.test2.b_test())
+        self.assertEqual(True, login_id.is_enabled(), "element not found")
+        login_id.send_keys(opensite.getdatafromxml.TestMatchSalesOrder.test_b(self))
         time.sleep(10)
+        self.screen_shot(driver)
         driver.quit()
 
+    def screen_shot(self, driver):
+        filename = str(round(time.time() * 1000)) + ".png"
+        screenshot_directory = "C:\\Users\\dcthofic07\\workspace_python\\D365Test\\opensite\\screenshot\\"
+        destination_file = screenshot_directory + filename
+        try:
+            driver.save_screenshot(destination_file)
+            print("Screen shot saved to directory " + destination_file)
+            driver.quit()
+        except NotADirectoryError:
+            print("Not a directory error")
 
-test1 = OpenWebsite()
-test1.a_test()
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

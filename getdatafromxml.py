@@ -1,12 +1,13 @@
 import opensite.GetSalesOrder
+import unittest
 
 
-class Match_sales_order():
+class TestMatchSalesOrder(unittest.TestCase):
 
-    def b_test(self):
+    def test_b(self):
 
         open_xml = open("C:\\Users\\dcthofic07\\Documents\\D365Test\\SB S21 Sales XML2021062313 24 17.xml", "r")
-        so = opensite.GetSalesOrder.read_data()
+        so = opensite.GetSalesOrder.TestGetSalesOrder.test_readdata(self)
         flag = 0
         index = 0
 
@@ -22,9 +23,8 @@ class Match_sales_order():
             print("Sales order not found")
         else:
             return so
-
         open_xml.close()
 
 
-test2 = Match_sales_order()
-test2.b_test()
+if __name__ == "__main__":
+    unittest.main(verbosity=1)
