@@ -9,12 +9,22 @@ jobs:
        
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+        
+      - name: Run Python Script
+        uses: jannekem/run-python-script-action@v1.2
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Test with pytest
-        run: |
-          python ./test.py
+          script: ./test.py
+#       - name: Set up Python ${{ matrix.python-version }}
+#         with:
+#           python-version: ${{ matrix.python-version }}
+#           uses: actions/checkout@v2
+#           with: actions/setup-python@v2
+#       - name: Test with pytest
+#         run: |
+#           python ./test.py
 #       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 #       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
 #       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
