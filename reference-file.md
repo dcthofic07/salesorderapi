@@ -1,4 +1,8 @@
-# commands for freezing depencies used
+## command for freezing depencies used
 ```bash
-pip freeze -r requirements.txt
+pip freeze > requirements.txt
+```
+## command to install requirements from file
+```bash
+pip install -r requirements.txt
 ```
