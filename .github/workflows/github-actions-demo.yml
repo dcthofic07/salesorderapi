@@ -13,10 +13,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.2.2
         
-      - name: Run Python Script
-        uses: jannekem/run-python-script-action@v1.2
-        with:
-          script: ./test.py
+      - name: Run python file
+        run: python ./test.py
 #       - name: Set up Python ${{ matrix.python-version }}
 #         with:
 #           python-version: ${{ matrix.python-version }}
