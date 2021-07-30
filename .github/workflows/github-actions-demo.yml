@@ -13,10 +13,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.2.2
         
-      - name: Python Dependency Installation
-        uses: py-actions/py-dependency-install@v2.1.0
-        with: ./requirements.txt
-    # Path to requirements.txt file
+      - name: Pip Installer
+        uses: BSFishy/pip-action@v1
+        with:
+          packages: pip freeze > requirements.txt
+          requirements: pip install -r requirements.txt
   
       - name: Run python file
         run: python ./test_suite_salesorderapi.py
