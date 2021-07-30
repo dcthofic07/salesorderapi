@@ -17,10 +17,7 @@ jobs:
         run: pip freeze > requirements.txt 
         
       - name: Pip Installer
-        uses: BSFishy/pip-action@v1
-         requirements: pip install -r requirements.txt
-        
-               
+        run: pip install -r requirements.txt
   
       - name: Run python file
         run: python ./test_suite_salesorderapi.py
