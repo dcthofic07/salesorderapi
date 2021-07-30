@@ -1,7 +1,7 @@
 import unittest
 from GetSalesOrder import TestGetSalesOrder
 from getdatafromxml import TestMatchSalesOrder
-import TestOpenWebsite
+from openwebsite import TestOpenWebsite
 
 tc1 = unittest.TestLoader().loadTestsFromTestCase(TestGetSalesOrder)
 tc2 = unittest.TestLoader().loadTestsFromTestCase(TestMatchSalesOrder)
