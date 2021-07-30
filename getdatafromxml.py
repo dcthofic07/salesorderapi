@@ -6,7 +6,7 @@ class TestMatchSalesOrder(unittest.TestCase):
 
     def test_b(self):
 
-        open_xml = open("./salesorderapi/SB S21 Sales XML2021062313 24 17.xml", "r")
+        open_xml = open("SB S21 Sales XML2021062313 24 17.xml", "r")
         so = GetSalesOrder.TestGetSalesOrder.test_readdata(self)
         flag = 0
         index = 0
