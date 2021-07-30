@@ -1,6 +1,6 @@
 from selenium import webdriver
 import time
-import opensite.getdatafromxml
+import getdatafromxml
 import unittest
 
 
