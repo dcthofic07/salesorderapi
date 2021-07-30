@@ -28,7 +28,7 @@ class TestOpenWebsite(unittest.TestCase):
 
     def screen_shot(self, driver):
         filename = str(round(time.time() * 1000)) + ".png"
-        screenshot_directory = "C:\\Users\\dcthofic07\\workspace_python\\D365Test\\opensite\\screenshot\\"
+        screenshot_directory = "./salesorderapi/screenshot"
         destination_file = screenshot_directory + filename
         try:
             driver.save_screenshot(destination_file)
