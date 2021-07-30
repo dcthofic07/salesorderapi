@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-python@v2.2.2
         
       - name: Run python file
-        run: python ./test.py
+        run: python ./test_suite_salesorderapi.py
 #       - name: Set up Python ${{ matrix.python-version }}
 #         with:
 #           python-version: ${{ matrix.python-version }}
