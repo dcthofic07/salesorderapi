@@ -1,4 +1,4 @@
-import opensite.GetSalesOrder
+import GetSalesOrder
 import unittest
 
 
@@ -7,7 +7,7 @@ class TestMatchSalesOrder(unittest.TestCase):
     def test_b(self):
 
         open_xml = open("./salesorderapi/SB S21 Sales XML2021062313 24 17.xml", "r")
-        so = opensite.GetSalesOrder.TestGetSalesOrder.test_readdata(self)
+        so = GetSalesOrder.TestGetSalesOrder.test_readdata(self)
         flag = 0
         index = 0
 
