@@ -24,7 +24,7 @@ class TestOpenWebsite(unittest.TestCase):
         time.sleep(5)
         login_id = driver.find_element_by_xpath("//*[@id='email']")
         self.assertEqual(True, login_id.is_enabled(), "element not found")
-        login_id.send_keys(opensite.getdatafromxml.TestMatchSalesOrder.test_b(self))
+        login_id.send_keys(getdatafromxml.TestMatchSalesOrder.test_b(self))
         time.sleep(10)
         self.screen_shot(driver)
         driver.quit()
