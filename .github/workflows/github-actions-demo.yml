@@ -13,6 +13,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2.2.2
         
+      - name: Python Dependency Installation
+        uses: py-actions/py-dependency-install@v2.1.0
+        with: ./requirements.txt
+    # Path to requirements.txt file
+  
       - name: Run python file
         run: python ./test_suite_salesorderapi.py
 #       - name: Set up Python ${{ matrix.python-version }}
