@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
 import time
 import getdatafromxml
 import unittest
@@ -7,7 +8,9 @@ import unittest
 class TestOpenWebsite(unittest.TestCase):
 
     def test_a(self):
-        driver = webdriver.Firefox()
+        opts = FirefoxOptions()
+        opts.add_argument("--headless")
+        driver = webdriver.Firefox(firefox_options=opts)
         driver.maximize_window()
         driver.get("https://courses.letskodeit.com/practice")
         driver.implicitly_wait(10)
