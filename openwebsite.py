@@ -31,7 +31,7 @@ class TestOpenWebsite(unittest.TestCase):
 
     def screen_shot(self, driver):
         filename = str(round(time.time() * 1000)) + ".png"
-        screenshot_directory = "./salesorderapi/screenshot"
+        screenshot_directory = "screenshot"
         destination_file = screenshot_directory + filename
         try:
             driver.save_screenshot(destination_file)
